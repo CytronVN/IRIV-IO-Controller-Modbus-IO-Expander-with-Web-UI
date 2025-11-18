@@ -4,6 +4,9 @@ This is the example code for using the IRIV IO Controller (IRIV-IOC) as a IO Exp
 - 11x Digital Inputs (5 of them can be configured as counter)
 - 4x Digital Outpus
 - 2x Analog Inputs (0-10V or 0-40mA)
+- Web UI dashboard (HTML + JSON) for live status and control
+
+![IRIV IO Controller Dashboard](iriv-ioc-dashboard.png)
 
 ## Setting Up
 1. Load the IRIV IO Controller with the latest CircuitPython Firmware. It can be downloaded from [here](https://circuitpython.org/board/cytron_iriv_io_controller/).
@@ -464,3 +467,5 @@ For more information on how this works, please refer to the [Adafruit Tutorial](
   - Switched HTTP implementation to `adafruit_httpserver` with Wiznet5k socket pool.
   - Increased watchdog timeout in TCP mode and fed earlier to improve stability.
   - Reduced MODBUS TCP `max_connections` to reserve sockets for HTTP.
+- 2024-10-23
+  - Initial code published.
