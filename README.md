@@ -1,10 +1,10 @@
 # MODBUS RTU/TCP IO Expander Example Code
 This is the example code for using the IRIV IO Controller (IRIV-IOC) as a IO Expander Module. The code is written in CircuitPython and support the following features:
-- MODBUS RTU (RS485) and MODBUS TCP (Ethernet) Compatible<br>It's configured as RTU mode by default and can be changed in the `settings.toml` file
+- MODBUS RTU (RS485) and MODBUS TCP (Ethernet) Compatible<br>It's configured as TCP mode by default and can be changed in the `settings.toml` file
 - 11x Digital Inputs (5 of them can be configured as counter)
 - 4x Digital Outpus
 - 2x Analog Inputs (0-10V or 0-40mA)
-- Web UI dashboard (HTML + JSON) for live status and control
+- Web UI dashboard (HTML + JSON) for live status and control, with optional RS485 temperature/humidity sensor integration
 
 ![IRIV IO Controller Dashboard](iriv-ioc-dashboard.png)
 
