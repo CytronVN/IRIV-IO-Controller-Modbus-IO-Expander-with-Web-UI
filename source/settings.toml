@@ -1,0 +1,80 @@
+# MODBUS Mode ("RTU" or "TCP").
+MODBUS_MODE = "TCP"
+
+
+
+"""
+These configurations are only for MODBUS RTU.
+"""
+
+# Baudrate for RS485.
+# Maximum baudrate = 115200.
+MODBUS_RTU_BAUDRATE = 9600
+
+# MODBUS RTU Slave ID/Address.
+# Valid Range = 1 to 247.
+MODBUS_RTU_SLAVE_ADDRESS = 1
+
+
+
+"""
+These configurations are only for MODBUS TCP.
+"""
+
+# Get IP from DHCP Server (1=Yes or 0=No)?
+# If NO, we need to set the IP Address, Subnet Mask, Gateway Address and DNS Address manually.
+DHCP = 1
+
+# IP Adress (Ignored if DHCP = True)
+IP_ADDRESS = "10.0.0.2"
+
+# Subnet Mask (Ignored if DHCP = True)
+SUBNET_MASK = "255.255.255.0"
+
+# Gateway Address (Ignored if DHCP = True)
+GATEWAY_ADDRESS = "0.0.0.0"
+
+# DNS Server Address (Ignored if DHCP = True)
+DNS_SERVER = "8.8.8.8"
+
+
+# Simple Web Server (only in MODBUS TCP mode)
+# Enable/Disable web server: 1 to enable, 0 to disable
+WEBSERVER_ENABLE = 1
+# HTTP port (default 80)
+WEBSERVER_PORT = 80
+# HTML auto-refresh interval in seconds
+WEBSERVER_REFRESH_SEC = 5
+
+
+# RS485 temperature sensor (Modbus RTU master poller, only active in TCP mode)
+# Enable: 1=on, 0=off
+RS485_SENSOR_ENABLE = 1
+# Sensor Modbus address (Unit ID)
+RS485_SENSOR_ADDR = 1
+# Register address to read
+RS485_SENSOR_REG = 0
+# Function: "IREG" (Function 04) or "HREG" (Function 03)
+RS485_SENSOR_FUNC = "IREG"
+# Signed register values? 1/0
+RS485_SENSOR_SIGNED = 0
+# Scale factor to convert raw register to degrees C (value = raw * scale)
+RS485_SENSOR_SCALE = 0.1
+# Poll interval (seconds)
+RS485_SENSOR_POLL_SEC = 2
+# RTU baudrate for sensor (falls back to MODBUS_RTU_BAUDRATE if unset)
+RS485_SENSOR_BAUD = 9600
+# Optional profile and decoding (set to SN_HUTE for this sensor)
+RS485_SENSOR_PROFILE = "SN_HUTE"      # GENERIC or SN_HUTE
+# Temperature format: int16|uint16|float32|float32_swapped
+RS485_SENSOR_FORMAT = "int16"
+# Quantity of registers to read for temperature (1 for int16, 2 for float32)
+RS485_SENSOR_QTY = 1
+# Enable humidity channel
+RS485_SENSOR_HUM_ENABLE = 1
+# Humidity register address
+RS485_SENSOR_HUM_REG = 2
+# Humidity format and qty
+RS485_SENSOR_HUM_FORMAT = "int16"
+RS485_SENSOR_HUM_QTY = 1
+RS485_SENSOR_HUM_SCALE = 0.1
